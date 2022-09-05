@@ -9,9 +9,12 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
 import { useDispatch } from 'react-redux';
 import { auth } from './firebase';
-import { logout } from './features/userSlice';
+import { logout} from './features/userSlice';
 
 const Header= () => {
+
+   
+
     const dispatch = useDispatch();
     const logoutofApp =() => {
         dispatch(logout());
@@ -37,7 +40,7 @@ const Header= () => {
             <HeaderOption Icon={BusinessCenterIcon} title='Jobs'/>
             <HeaderOption Icon={MailOutlineIcon} title='Message' />
             <HeaderOption Icon={MarkUnreadChatAltIcon} title='Notifications'/>
-            <HeaderOption avatar='https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png' 
+            <HeaderOption 
                 title='Me'
                 onClick={logoutofApp}
                 />

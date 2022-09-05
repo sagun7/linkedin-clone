@@ -1,8 +1,13 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { selectUser } from './features/userSlice'
 import './Sidebar.css'
 
 const Sidebar = () => {
+
+const user = useSelector(selectUser)
+
 const recentItem = (topic) => (
     <div className="sidebar__recentItem">
         <span className="sidebar__hash">#</span>
@@ -16,9 +21,9 @@ const recentItem = (topic) => (
         <div className="sidebar__top">
             <img src="http://www.flipbuilder.com/templates-themes/img/theme/classical_flowery.jpg
             " alt="" />
-            <Avatar className='sidebar__avatar' />
-            <h2> Sagun Panthi</h2>
-            <h4> sagun.panthi7@gmail.com</h4>
+            <Avatar src={user.photoUrl} className='sidebar__avatar'> {user.email[0]} </ Avatar>
+            <h2> {user.displayName}</h2>
+            <h4> {user.email}</h4>
         </div>
         <div className="sidebar__stats">
             <div className="sidebar__stat">
