@@ -5,7 +5,7 @@ import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Feed from './Feed.js';
-import Widget from './Widget.js'
+import Widgets from './Widgets.js'
 import { login, logout, selectUser } from './features/userSlice';
 import Login from './Login';
 import { auth } from './firebase';
@@ -45,7 +45,7 @@ useEffect(() => {
         ( <div className="app__body">
             <Sidebar />
             <Feed />
-            <Widget />
+            <Widgets />
           </div>
 
         )}
